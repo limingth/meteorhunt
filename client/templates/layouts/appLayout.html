@@ -9,17 +9,17 @@
 
     {{#if isAndroid}}
       {{#ionTabs style="android"}}
-        {{> ionTab title="Trending" path="trending" icon="android-star"}}
-        {{> ionTab title="Recent" path="recent" icon="android-time"}}
-        {{> ionTab title="Notifications" path="notifications" icon="android-notifications"}}
-        {{> ionTab title="Profile" path="profile" icon="android-happy"}}
+        {{> ionTab title="用户列表" path="trending" icon="android-people"}}
+        {{> ionTab title="学习目标" path="recent" icon="android-flag"}}
+        {{> ionTab title="日程提醒" path="notifications" icon="android-clock"}}
+        {{> ionTab title="我" path="profile" icon="android-contact"}}
       {{/ionTabs}}
     {{else}}
       {{#ionTabs style="ios"}}
-        {{> ionTab title="Trending" path="trending" iconOff="ios-bolt-outline" iconOn="ios-bolt" class="tab-item-positive"}}
-        {{> ionTab title="Recent" path="recent" iconOff="ios-clock-outline" iconOn="ios-clock" class="tab-item-positive"}}
-        {{> ionTab title="Notifications" path="notifications" iconOff="ios-bell-outline" iconOn="ios-bell" class="tab-item-positive"}}
-        {{> ionTab title="Profile" path="profile" iconOff="ios-person-outline" iconOn="ios-person" class="tab-item-positive"}}
+        {{> ionTab title="用户列表" path="trending" iconOff="ios-people-outline" iconOn="ios-people" class="tab-item-positive"}}
+        {{> ionTab title="学习目标" path="recent" iconOff="ios-flag-outline" iconOn="ios-flag" class="tab-item-positive"}}
+        {{> ionTab title="日程提醒" path="notifications" iconOff="ios-clock-outline" iconOn="ios-clock" class="tab-item-positive"}}
+        {{> ionTab title="我" path="profile" iconOff="ios-contact-outline" iconOn="ios-contact" class="tab-item-positive"}}
       {{/ionTabs}}
     {{/if}}
   {{/ionBody}}
