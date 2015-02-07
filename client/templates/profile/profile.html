@@ -16,6 +16,27 @@
       {{#with user}}
         {{> _profileHeader}}
         {{#ionList}}
+        <div class="padding product-detail-comments">
+						<h2>
+							<a href="https://github.com/{{profile.login}}" target="_blank">
+								<img src="/images/atmosphere-icon.png" width=32 height=32 class="positive" />
+								http://github.com/{{profile.login}}
+							</a>
+						</h2>
+
+								<h3>all repos: {{repo.data.length}}</h3>
+								{{#each repo.data}}
+                  <h4 class="product-title">
+										<li> <a href={{html_url}} target=_blank>{{name}}</a> </li>
+                  </h4>
+								  <h5> &nbsp; &nbsp; {{description}} </h5> 
+                  <hr>
+								{{else}}
+									<p style="font-size:20px;margin-top:30px;">There are no repo in this guy</p>
+								{{/each}}
+				</div>
+
+
           {{#each votedProducts}}
             {{> _productItem product=this path="products.show"}}
           {{/each}}
@@ -28,4 +49,30 @@
       {{/with}}
     {{/ionContent}}
   {{/ionView}}
+
+
+  {{#each allUsers}}
+    <div class="media">
+      <div class="pull-left" href="#">
+        <img src="{{ profile.avatar_url }}" style="width: 64px; height: 64px;">
+      </div>
+      <div class="media-body">
+        <h4 class="media-heading">{{ profile.name }} (<a href="{{profile.html_url}}">
+          {{ profile.login }}</a>)</h4>
+        <p><span class="js-set-geohash label label-primary" data-geohash="{{profile.geohash}}">{{profile.geohash}}</span> - {{profile.location}} <a rel="nofollow" href="{{ profile.blog }}">{{ profile.blog }}</a></p>
+        <p>{{loginpos.lat}}, {{loginpos.lng}}</p>
+        <p>{{loginaddr}}</p>
+        <p>{{loginzip}}</p>
+        <p>all repos: {{everything.data.length}}</p>
+        {{#each everything.data}}
+          <li> <a href={{html_url}} target=_blank>{{name}}</a> {{description}} </li><br>
+        {{else}}
+          <p style="font-size:20px;margin-top:30px;">There are no repo in this guy</p>
+        {{/each}}
+      </div>
+    </div>
+    {{else}}
+    <p style="font-size:20px;margin-top:30px;">There are no user in this area, wanna be the first? <i class="glyphicon glyphicon-hand-up"></i></p>
+  {{/each}}
+
 </template>

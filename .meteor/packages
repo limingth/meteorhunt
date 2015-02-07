@@ -5,7 +5,9 @@
 
 meteor-platform
 service-configuration
-accounts-meteor-developer
+#accounts-meteor-developer
+accounts-github
+accounts-ui
 momentjs:moment
 iron:router@1.0.0
 zimme:iron-router-active
