@@ -43,7 +43,7 @@ Meteor.startup(function() {
 
   if (Meteor.users.find({}).count() === 0) {
     _(users).each(function (user) {
-      Meteor.users.insert(user);
+      //Meteor.users.insert(user);
     });
   }
 
@@ -51,7 +51,6 @@ Meteor.startup(function() {
   if (Products.find({}).count() === 0) {
     _(products).each(function (product) {
       Products.insert({
-        userId: author._id,
         url: product.url,
         name: product.name,
         tagline: product.tagline,

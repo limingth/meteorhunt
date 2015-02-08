@@ -24,20 +24,31 @@
           {{> _productItem product=this path="products.show"}}
         {{/each}}
         -->
+          {{#each allUsers}}
+					 
+            {{#ionItem buttonRight=true avatar=true}}
+							<!-- {{> _voteButton}} -->
 
-						{{#ionItem path=../path iconLeft=true iconRight=true}}
-							{{> _voteButton}}
-							<h2>期待、黎明</h2>
-							<p> 
-								{{tagline}}
-                java，Mysql ，嵌入式，汇编，Linux内核移植，sql
-							</p>
-							<span class="comments-count">
-        				{{numberOfComments}}
-								8
-								{{> ionIcon icon="thumbsup" }}
-							</span>
+                <img src="{{profile.avatar_url}}" >
+                  
+                <h3>{{profile.name}} (@{{profile.login}})</h3>
+                
+                <!-- <p> <a href="mailto:{{profile.email}}"> {{profile.email}} </a></p> -->
+                <p> 
+                  {{#each skills}}
+                    {{language}} <!--, {{count}} -->
+                  {{/each}}
+                </p>
+
+                <div>
+                  <span class="comments-count">
+                  {{repo.data.length}}
+                  {{> ionIcon icon="social-github"}}
+                  </span>
+                </div>
+              
 						{{/ionItem}}
+          {{/each}}
 
       {{/ionList}}
     {{/ionContent}}

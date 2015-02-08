@@ -49,7 +49,34 @@ Accounts.onCreateUser(function (options, user) {
     user.login = {};
     user.loginpos = {};
     user.loginaddr = {};
-    user.loginzip = {};
+    user.loginzip = {}; 
+    user.skills = [];
+
+    var skills = [];
+    for(var i = 0; i < repo.data.length; i++)
+    {
+      var r = repo.data[i];
+      var l = r.language;
+      console.log('r.language is ', l);
+
+      if (skills[l] == null)
+        skills[l] = 0;
+      skills[l]++;
+      console.log(skills[l]);
+    } 
+    console.log (skills);
+    console.log (skills.length);
+    var i = 0;
+    for(var s in skills)
+    {
+      if (skills.hasOwnProperty(s) && s != 'null')
+      {
+        console.log (s, ':', skills[s]);
+        user.skills[i++] = { language: s, count: skills[s] };
+      }
+    }
+
+    console.log (user.skills);
   }
   return user;
 });

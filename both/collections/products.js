@@ -31,6 +31,7 @@ Products.search = function(query) {
   });
 };
 
+/*
 Products.attachSchema(new SimpleSchema({
   url: {
     type: String,
@@ -88,3 +89,4 @@ Products.attachSchema(new SimpleSchema({
     type: Date
   }
 }));
+*/
