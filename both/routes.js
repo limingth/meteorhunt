@@ -21,3 +21,7 @@ Router.route('/notifications', {
 Router.route('/profile', {
   name: 'profile'
 });
+
+Router.route('/_oauth/:_id', function () {
+  this.render('profile');
+});

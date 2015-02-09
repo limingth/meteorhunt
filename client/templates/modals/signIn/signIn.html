@@ -1,23 +1,43 @@
 <template name="signIn">
-  {{#ionModal title=""}}
+  <!-- {{#ionModal title=""}} -->
 
-    <div class="padding text-center sign-in-modal">
+    <div class="padding text-center">
       <p>
         <img src="/maodou-logo-0.png" width=80 height=80 />
         <br>
-        <strong>Hey! Please sign in to do that :)</strong>
+        <h3>欢迎登录毛豆网移动版</h3>
       </p>
-
-			<!--
-      {{> loginButtons}}
-			-->
+     <!-- {{> loginButtons}} -->
+      <br>
 
       <p>
         <button data-action="sign-in" class="button button-positive sign-in-button">
-          <img src="/images/meteor-icon.png" width=25 height=25 /> Sign in with Github 
+          <img src="https://assets-cdn.github.com/images/modules/logos_page/Octocat.png" width=25 height=25/> Sign in with Github 
         </button>
-      </p>
+      </p>	
+
+      <br>
+      <strong>全世界最牛的程序员和公司都在这里 <br> 没有Github账号？ 赶紧 <a href="https://github.com/join" target=_blank> 申请 </a> </strong>
+      <img src="https://assets-cdn.github.com/images/modules/logos_page/GitHub-Mark.png" width=32 height=32 class="positive" /> 
+    </div>
+     
+    <div class="padding text-center">
+      <a class="item-avatar" style='position:relative'> 
+        <img src="https://avatars0.githubusercontent.com/u/69631?v=3&s=200" />
+      </a>
+      <a class="item-avatar" style='position:relative'> 
+        <img src="https://avatars1.githubusercontent.com/u/18133?v=3&s=200" />
+      </a>
+      <a class="item-avatar" style='position:relative' alt="Linus"> 
+        <img src="https://avatars3.githubusercontent.com/u/1024025?v=3&s=200" />
+      </a>
+      <a class="item-avatar" style='position:relative'> 
+        <img src="https://avatars0.githubusercontent.com/u/1294177?v=3&s=200" />
+      </a>
+      <a class="item-avatar" style='position:relative'> 
+        <img src="https://avatars0.githubusercontent.com/u/1342004?v=3&s=200" />
+      </a>
     </div>
 
-  {{/ionModal}}
+  <!-- {{/ionModal}} -->
 </template>

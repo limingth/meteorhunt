@@ -26,28 +26,31 @@
         -->
           {{#each allUsers}}
 					 
-            {{#ionItem buttonRight=true avatar=true}}
+            {{#ionItem path=../path iconLeft=true iconRight=true avatar=true}}
 							<!-- {{> _voteButton}} -->
 
-                <img src="{{profile.avatar_url}}" >
-                  
-                <h3>{{profile.name}} (@{{profile.login}})</h3>
-                
+                <img src="{{profile.avatar_url}}"> 
+                <h3>
+									{{profile.name}} 
+									(<a href="/users/{{_id}}">@{{profile.login}}</a>)&nbsp; 
+									{{profile.followers}} followers
+                </h3>
+
                 <!-- <p> <a href="mailto:{{profile.email}}"> {{profile.email}} </a></p> -->
                 <p> 
                   {{#each skills}}
-                    {{language}}: {{count}}, 
+                  	{{language}}-{{count}}, 
                   {{/each}}
                 </p>
 
                 <div>
                   <span class="comments-count">
-                  {{repo.data.length}}
+                  {{profile.public_repos}}
                   {{> ionIcon icon="social-github"}}
                   </span>
                 </div>
               
-						{{/ionItem}}
+			{{/ionItem}}
           {{/each}}
 
       {{/ionList}}

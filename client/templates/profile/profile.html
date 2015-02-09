@@ -11,68 +11,58 @@
     <h1 class="title">我</h1>
   {{/contentFor}}
 
-  {{#ionView}}
-    {{#ionContent}}
-      {{#with user}}
-        {{> _profileHeader}}
-        {{#ionList}}
-        <div class="padding product-detail-comments">
-						<h2>
-							<a href="https://github.com/{{profile.login}}" target="_blank">
-								<img src="/images/atmosphere-icon.png" width=32 height=32 class="positive" />
-								http://github.com/{{profile.login}}
-							</a>
-						</h2>
+  {{#if currentUser}}
+	  {{#ionView}}
+	    {{#ionContent}}
+	      {{#with user}}
+	        {{> _profileHeader}}
 
-								<h3>all repo: {{repo.data.length}}</h3>
-								{{#each repo.data}}
-                  <h4 class="product-title">
-										<li> <a href={{html_url}} target=_blank>{{name}}</a> [{{language}}] </li>
-                  </h4>
-								  <h5> &nbsp; &nbsp; {{description}} </h5> 
-                  <hr>
-								{{else}}
-									<p style="font-size:20px;margin-top:30px;">There are no repo in this guy</p>
-								{{/each}}
-				</div>
+	        {{#ionList}}
+	        <div class="padding product-detail-comments">
+							<h4>
+								<img src="https://assets-cdn.github.com/images/modules/logos_page/GitHub-Mark.png" width=32 height=32 class="positive" /> 
+								<a href="https://github.com/{{profile.login}}" target="_blank">
+									http://github.com/{{profile.login}}</a>
+								 &nbsp; &nbsp; ({{profile.public_repos}} repos, {{profile.followers}} followers)
+							</h4>
+									{{#each repos}}
+										{{#ionItem}} 
+			                  <h3 class="product-title">
+													<a href={{html_url}} target=_blank>{{name}}</a> 
+			                  </h3>
+			                  <div class="product-detail">
+			                  {{description}} 
+				                  {{#if language}}
+						         			  <a href="#" target="_blank" class="positive">[{{language}}]</a>
+						         			{{/if}}
+					         			</div>
+		                {{/ionItem}}
+									{{else}}
+										<p style="font-size:20px;margin-top:30px;">There are no repo in this guy</p>
+									{{/each}}
+					</div>
 
+	          {{#each votedProducts}}
+	            {{> _productItem product=this path="products.show"}}
+	          {{/each}}
+	        {{/ionList}}
+	      {{else}}
+	        <div class="empty-view">
+	          {{> ionIcon icon="ios-person"}}
+	          No profile yet!
+	        </div>
+	      {{/with}}
+	    {{/ionContent}}
+	  {{/ionView}}
+ 
+  {{else}}
+	  {{#ionView}}
+	    {{#ionContent}}
+	   	  {{> signIn}}
+	   	{{/ionContent}}
+	  {{/ionView}}
+ 
+  {{/if}}
 
-          {{#each votedProducts}}
-            {{> _productItem product=this path="products.show"}}
-          {{/each}}
-        {{/ionList}}
-      {{else}}
-        <div class="empty-view">
-          {{> ionIcon icon="ios-person"}}
-          No profile yet!
-        </div>
-      {{/with}}
-    {{/ionContent}}
-  {{/ionView}}
-
-
-  {{#each allUsers}}
-    <div class="media">
-      <div class="pull-left" href="#">
-        <img src="{{ profile.avatar_url }}" style="width: 64px; height: 64px;">
-      </div>
-      <div class="media-body">
-        <h4 class="media-heading">{{ profile.name }} (<a href="{{profile.html_url}}">
-          {{ profile.login }}</a>)</h4>
-        <p><span class="js-set-geohash label label-primary" data-geohash="{{profile.geohash}}">{{profile.geohash}}</span> - {{profile.location}} <a rel="nofollow" href="{{ profile.blog }}">{{ profile.blog }}</a></p>
-        <p>{{loginpos.lat}}, {{loginpos.lng}}</p>
-        <p>{{loginaddr}}</p>
-        <p>{{loginzip}}</p>
-        <p>all repos: {{everything.data.length}}</p>
-        {{#each everything.data}}
-          <li> <a href={{html_url}} target=_blank>{{name}}</a> {{description}} </li><br>
-        {{else}}
-          <p style="font-size:20px;margin-top:30px;">There are no repo in this guy</p>
-        {{/each}}
-      </div>
-    </div>
-    {{else}}
-    <p style="font-size:20px;margin-top:30px;">There are no user in this area, wanna be the first? <i class="glyphicon glyphicon-hand-up"></i></p>
-  {{/each}}
 
 </template>
