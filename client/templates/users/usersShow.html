@@ -10,15 +10,38 @@
   {{#ionView}}
     {{#ionContent}}
 
-      {{#with user}}
-        {{> _profileHeader}}
+	      {{#with user}}
+	        {{> _profileHeader}}
 
-        {{#ionList}}
-          {{#each votedProducts}}
-            {{> _productItem product=this path="products.show"}}
-          {{/each}}
-        {{/ionList}}
-      {{/with}}
+	        {{#ionList}}
+	        <div class="padding product-detail-comments">
+							<h4>
+								<img src="https://assets-cdn.github.com/images/modules/logos_page/GitHub-Mark.png" width=32 height=32 class="positive" /> 
+								<a href="https://github.com/{{profile.login}}" target="_blank">
+									http://github.com/{{profile.login}}</a>
+							</h4>
+									{{#each repos}}
+										{{#ionItem}} 
+			                  <h3 class="product-title">
+													<a href={{html_url}} target=_blank>{{name}}</a> 
+			                  </h3>
+			                  <div class="product-detail">
+			                  {{description}} 
+				                  {{#if language}}
+						         			  <a href="#" target="_blank" class="positive">[{{language}}]</a>
+						         			{{/if}}
+					         			</div>
+		                {{/ionItem}}
+									{{else}}
+										<p style="font-size:20px;margin-top:30px;">There are no repo in this guy</p>
+									{{/each}}
+					</div>
+
+	          {{#each votedProducts}}
+	            {{> _productItem product=this path="products.show"}}
+	          {{/each}}
+	        {{/ionList}}
+        {{/with}}
 
     {{/ionContent}}
   {{/ionView}}
