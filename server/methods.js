@@ -12,3 +12,4 @@ Meteor.methods({
     Meteor.users.update({_id: this.userId}, {$addToSet: {'profile.votedProductIds': _id}});
   }
 });
+
