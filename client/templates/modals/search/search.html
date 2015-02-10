@@ -1,3 +1,4 @@
+
 <template name="search">
   {{#ionModal focusFirstInput=true title="Search"}}
     <div class="list">
@@ -7,8 +8,8 @@
           <input type="text" placeholder="Search" value="{{searchQuery}}">
         </label>
       </div>
-      {{#each products}}
-        {{> _productItem product=this path="products.show"}}
+      {{#each results}}
+        {{> _userItem user=this path="users.show"}}
       {{/each}}
     </div>
   {{/ionModal}}
