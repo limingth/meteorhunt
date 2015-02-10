@@ -67,6 +67,7 @@ Meteor.publish("allUsers", function (opts) {
     'repos':1, 
     'skills':1,
     'updatedAt':1, 
+    'services':1,
   };  
   // userFields = {}
   // var res = Meteor.users.find( search ,{fields: userFields, sort:{updatedAt:-1} } );

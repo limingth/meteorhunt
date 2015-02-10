@@ -10,9 +10,9 @@ Meteor.startup(function() {
         name: 'nickw'
       },
       services: {
-        'meteor-developer': {
+        'github': {
           id: '2jefqB8rsQ2q3TuRW',
-          username: 'nickw',
+          username: 'limingth',
           emails: [{
             address: 'nick@exygen.io',
             verified: false,
@@ -43,7 +43,7 @@ Meteor.startup(function() {
 
   if (Meteor.users.find({}).count() === 0) {
     _(users).each(function (user) {
-      //Meteor.users.insert(user);
+      Meteor.users.insert(user);
     });
   }
 

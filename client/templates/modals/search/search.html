@@ -1,11 +1,11 @@
 
 <template name="search">
-  {{#ionModal focusFirstInput=true title="Search"}}
+  {{#ionModal focusFirstInput=true title="搜索用户"}}
     <div class="list">
       <div class="item item-input-inset">
         <label class="item-input-wrapper">
           {{> ionIcon icon="ios-search" class="placeholder-icon"}}
-          <input type="text" placeholder="Search" value="{{searchQuery}}">
+          <input type="text" placeholder="请输入用户信息，例如用户名，编程语言，项目名称等" value="{{searchQuery}}">
         </label>
       </div>
       {{#each results}}
@@ -14,3 +14,21 @@
     </div>
   {{/ionModal}}
 </template>
+
+
+<template name="search2">
+  {{#ionModal focusFirstInput=true title="搜索学习目标"}}
+    <div class="list">
+      <div class="item item-input-inset">
+        <label class="item-input-wrapper">
+          {{> ionIcon icon="ios-search" class="placeholder-icon"}}
+          <input type="text" placeholder="请输入学习目标包含的关键字，例如meteor" value="{{searchQuery2}}">
+        </label>
+      </div>
+      {{#each products}}
+        {{> _productItem product=this path="products.show"}}
+      {{/each}}
+    </div>
+  {{/ionModal}}
+</template>
+

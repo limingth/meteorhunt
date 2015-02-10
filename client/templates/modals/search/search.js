@@ -15,6 +15,16 @@ Template.search.events({
   }
 });
 
+Template.search2.events({
+  'keyup input': function (event, template) {
+    Session.set('searchQuery2', event.target.value);
+  },
+
+  'click a': function (event, template) {
+    IonModal.close();
+  }
+});
+
 Template.search.helpers({
   results: function() {
     //return Products.search(Session.get('searchQuery'));
@@ -22,5 +32,15 @@ Template.search.helpers({
   },
   searchQuery: function() {
     return Session.get('searchQuery');
+  }
+});
+
+Template.search2.helpers({
+  products: function() {
+    return Products.search(Session.get('searchQuery2'));
+    //return AllUsers.search(Session.get('searchQuery2'));
+  },
+  searchQuery: function() {
+    return Session.get('searchQuery2');
   }
 });
