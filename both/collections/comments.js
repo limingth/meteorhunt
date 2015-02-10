@@ -12,7 +12,7 @@ Comments.attachSchema(new SimpleSchema({
     autoform: {
       rows: 6,
       'label-type': 'placeholder',
-      placeholder: 'Add your comment…'
+      placeholder: '在此添加你的评论……'
     }
   },
   userId: {
