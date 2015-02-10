@@ -31,21 +31,13 @@ Products.search = function(query) {
   });
 };
 
-/*
+
 Products.attachSchema(new SimpleSchema({
-  url: {
-    type: String,
-    autoform: {
-      'label-type': 'placeholder',
-      placeholder: 'Product URL'
-    },
-    max: 200
-  },
   name: {
     type: String,
     autoform: {
       'label-type': 'placeholder',
-      placeholder: 'Product Name'
+      placeholder: '目标名称'
     },
     max: 200
   },
@@ -53,7 +45,15 @@ Products.attachSchema(new SimpleSchema({
     type: String,
     autoform: {
       'label-type': 'placeholder',
-      placeholder: 'Tagline'
+      placeholder: '关键字'
+    },
+    max: 200
+  },
+  url: {
+    type: String,
+    autoform: {
+      'label-type': 'placeholder',
+      placeholder: '详情链接'
     },
     max: 200
   },
@@ -89,4 +89,4 @@ Products.attachSchema(new SimpleSchema({
     type: Date
   }
 }));
-*/
+

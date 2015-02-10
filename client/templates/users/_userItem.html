@@ -1,0 +1,29 @@
+<template name="_userItem">
+	{{#with user}}
+            {{#ionItem path=../path iconLeft=true iconRight=true avatar=true}}
+							<!-- {{> _voteButton}} -->
+
+                <img src="{{profile.avatar_url}}"> 
+                <h3>
+									{{profile.name}} 
+									(<a href="/users/{{_id}}">@{{profile.login}}</a>)&nbsp; 
+									{{profile.followers}} followers
+                </h3>
+
+                <!-- <p> <a href="mailto:{{profile.email}}"> {{profile.email}} </a></p> -->
+                <p> 
+                  {{#each skills}}
+                  	{{language}}-{{count}}, 
+                  {{/each}}
+                </p>
+
+                <div>
+                  <span class="comments-count">
+                  {{> ionIcon icon="social-github"}}
+                  {{profile.public_repos}}
+                  </span>
+                </div>
+              
+						{{/ionItem}}
+	{{/with}}
+</template>

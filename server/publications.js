@@ -12,7 +12,6 @@ Meteor.publish('productsSearch', function(query) {
   return Products.search(query);
 });
 
-/*
 Meteor.publishComposite('product', function(_id) {
   return {
     find: function() {
@@ -44,7 +43,6 @@ Meteor.publishComposite('product', function(_id) {
     ]
   };
 });
-*/
 
 Meteor.publishComposite('user', function(_id) {
   return {

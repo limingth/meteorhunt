@@ -51,6 +51,7 @@ Meteor.startup(function() {
   if (Products.find({}).count() === 0) {
     _(products).each(function (product) {
       Products.insert({
+      	userId: author._id,
         url: product.url,
         name: product.name,
         tagline: product.tagline,

@@ -3,9 +3,13 @@
     {{#ionItem path=../path iconLeft=true iconRight=true}}
       {{> _voteButton}}
       <h2>{{name}}</h2>
-      <p>
-        {{tagline}}
-      </p>
+      <h3>
+        <!-- {{tagline}} -->
+        {{#with author}}
+						{{profile.name}} 
+						(<a href="/users/{{_id}}">@{{profile.login}}</a>)
+        {{/with}}
+      </h3>
       <span class="comments-count">
         {{numberOfComments}}
         {{> ionIcon icon="ios-chatbubble" }}

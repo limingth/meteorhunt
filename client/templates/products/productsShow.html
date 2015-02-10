@@ -11,14 +11,14 @@
   {{/contentFor}}
 
   {{#contentFor "headerTitle"}}
-    <h1 class="title">Details</h1>
+    <h1 class="title">目标详情</h1>
   {{/contentFor}}
 
   {{#ionView}}
     {{#ionContent}}
 
       <div class="product-detail">
-
+      	
         {{#with product}}
 
           {{#ionItem iconLeft=true iconRight=true class="item-text-wrap"}}
@@ -26,7 +26,7 @@
             <h2 class="product-title">
               <a href="{{url}}" target="_blank" class="positive">{{name}}</a>
             </h2>
-            <p>
+            <p>tag
               {{tagline}}
             </p>
             {{#with author}}
@@ -42,9 +42,7 @@
           <div class="padding product-detail-upvotes">
             <h5>Upvotes <small>{{numberOfVotes}}</small></h5>
             {{#each voters}}
-              <a href="{{pathFor 'users.show'}}">
-                {{> avatar user=this size="small" shape="circle"}}
-              </a>
+
             {{/each}}
           </div>
 
@@ -67,4 +65,5 @@
 
     {{/ionContent}}
   {{/ionView}}
+
 </template>
