@@ -23,21 +23,36 @@ AllUsers.search = function(query) {
   // http://docs.mongodb.org/manual/reference/method/db.collection.find/
   // http://docs.mongodb.org/manual/reference/operator/query/or/#op._S_or
   return Meteor.users.find({
-  	$or: 
-  	[
-					{ skills: { 
-					    		$elemMatch: {
-					    			language: { $regex: RegExp.escape(query), $options: 'i' }
-					    		}
-					    }
-					},
-					{ 
-						'profile.name': { $regex: RegExp.escape(query), $options: 'i' }
-					},
-					{ 
-						'profile.email': { $regex: RegExp.escape(query), $options: 'i' }
-					}
-  	]
+    $or:
+    [
+      { skills: {
+            $elemMatch: {
+              language: { $regex: RegExp.escape(query), $options: 'i' }
+            }
+          }
+      },
+      { repos: {
+            $elemMatch: {
+              name: { $regex: RegExp.escape(query), $options: 'i' }
+            }
+          }
+      },
+      { repos: {
+            $elemMatch: {
+              description: { $regex: RegExp.escape(query), $options: 'i' }
+            }
+          }
+      },
+      {
+        'profile.name': { $regex: RegExp.escape(query), $options: 'i' }
+      },
+      {
+        'profile.email': { $regex: RegExp.escape(query), $options: 'i' }
+      },
+      {
+        'profile.login': { $regex: RegExp.escape(query), $options: 'i' }
+      }
+    ]
   });
 };
 
