@@ -1,6 +1,11 @@
 <template name="_profileHeader">
   <div class="profile-header">
-    {{> avatar user=this size="large" shape="circle"}}
+
+    <div class="avatar avatar-large avatar-circle avatar-hide-initials">
+      <img class="avatar-image" src="{{profile.avatar_url}}?s=200" width="80" height="80">
+      <span class="avatar-initials">LM</span>
+    </div>
+       
     <h3>{{ profile.name }} @ {{ profile.location }}</h3>
     <h4> <a href="mailto:{{profile.email}}"> {{profile.email}} </a></h4>
     <p> {{profile.public_repos}} repos, {{profile.followers}} followers </p> 

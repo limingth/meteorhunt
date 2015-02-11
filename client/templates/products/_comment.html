@@ -1,10 +1,15 @@
 <template name="_comment">
   <div class="item item-text-wrap comment-item">
     {{#with author}}
+   
       <a href="{{pathFor 'users.show'}}" class="comment-item-author">
-        {{> avatar user=this size="small" shape="circle"}}
+        <div class="avatar avatar-small avatar-circle avatar-hide-initials">
+          <img class="avatar-image" src="{{profile.avatar_url}}" width="30" height="30">
+          <span class="avatar-initials">LM</span>
+        </div>
         {{profile.name}}
       </a>
+  
     {{/with}}
     <p>
       {{body}} 
