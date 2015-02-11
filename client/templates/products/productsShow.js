@@ -9,3 +9,11 @@ Template.productsShow.events({
     }
   }
 });
+
+
+Template._comment.helpers({
+  datePosted: function () {
+  	// http://momentjs.com/
+    return moment(this.createdAt).fromNow();;
+  },
+});

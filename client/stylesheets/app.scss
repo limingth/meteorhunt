@@ -101,10 +101,20 @@
 
 .date-posted {
   font-size: 12px;
-  width: 36px;
+  width: 96px;
   text-align: right;
   position: absolute;
-  top: 16px;
+  top: 64px;
+  right: 16px;
+  color: #999999;
+}
+
+.comment-posted {
+  font-size: 12px;
+  width: 160px;
+  text-align: right;
+  position: absolute;
+  top: 6px;
   right: 16px;
   color: #999999;
 }
