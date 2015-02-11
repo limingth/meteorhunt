@@ -1,7 +1,7 @@
 Template.signIn.events({
   'click [data-action=sign-in]': function (event, template) {
     //Meteor.loginWithMeteorDeveloperAccount({}, function (error) {
-    Meteor.loginWithGithub( function (error) {
+      Meteor.loginWithGithub({ loginStyle: "redirect" }, function (error) {
       if (error) {
         //alert(error);
         console.log ("redirect err ", error);
