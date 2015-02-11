@@ -11,6 +11,13 @@ Template.productsShow.events({
 });
 
 
+Template.productsShow.helpers({
+	get_avatar_url: function (usr) {
+  	// http://momentjs.com/
+    return Avatar.getUrl(usr);
+  }
+});
+
 Template._comment.helpers({
   datePosted: function () {
   	// http://momentjs.com/

@@ -39,6 +39,7 @@
             </span>
           {{/ionItem}}
 
+          <!--
           <div class="padding product-detail-upvotes">
             <h5>支持：<small>{{numberOfVotes}}</small></h5>
             {{#each voters}}
@@ -47,11 +48,21 @@
               </a>
             {{/each}}
           </div>
+          -->
 
+          <div class="padding text-left">
+            <h5>支持: <small>{{numberOfVotes}}</small></h5>
+            {{#each voters}}
+            <a class="item-avatar" style='position:relative'>
+              <img src={{get_avatar_url this}} />
+            </a>
+            {{/each}}
+          </div>
+          <br>
         {{/with}}
 
         <div class="padding product-detail-comments">
-          <h5>评论</h5>
+          <h5>评论: <small>{{numberOfComments}}</small></h5>
           <button class="button button-positive button-small button-circle button-new-comment" data-action="new-comment">
             {{>ionIcon icon="plus"}}
           </button>
