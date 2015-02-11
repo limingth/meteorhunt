@@ -53,9 +53,9 @@
           <div class="padding text-left">
             <h5>支持: <small>{{numberOfVotes}}</small></h5>
             {{#each voters}}
-            <a class="item-avatar" style='position:relative'>
-              <img src={{get_avatar_url this}} />
-            </a>
+              <a href="{{pathFor 'users.show'}}" class="item-avatar" style='position:relative'>
+                  <img src="{{profile.avatar_url}}" height="40" width="40">
+              </a>
             {{/each}}
           </div>
           <br>
