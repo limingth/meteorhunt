@@ -65,3 +65,14 @@ ProfileController = AppController.extend({
     }
   }
 });
+
+GithubController = AppController.extend({
+    waitOn: function () {
+    return Meteor.subscribe('products');
+  },
+  data: function () {
+    return {
+      products: Products.find({}, {sort: {createdAt: -1, name: -1}})
+    };
+  }
+});

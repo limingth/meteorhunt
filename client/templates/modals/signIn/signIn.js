@@ -12,5 +12,9 @@ Template.signIn.events({
         console.log ("redirect ok, now render other pages ", error);
       }
     });
-  }
+  },
+  'click [data-action=apply-for]': function (event, template) {
+      console.log ('apply-for clicked');
+      Router.go('/github');
+  },
 });
