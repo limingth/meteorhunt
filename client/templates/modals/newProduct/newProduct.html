@@ -6,8 +6,11 @@
 
 
 <template name="newChat">
-  {{#ionModal focusFirstInput=true title="发起聊天"}}
-    <!-- {{> quickForm collection="Products" id="chat-new-form" type="insert" omitFields="userId,voterIds,numberOfVotes,numberOfComments,createdAt" buttonContent="聊天"}} -->
-    <iframe src="http://maodou.us:3000/plugin/chat?id=123456&firstName=maodou.io&lastName=&pictureUrl=http://g.twimg.com/Twitter_logo_blue.png" height=100% width=100%></iframe>
-  {{/ionModal}}
+
+    {{#ionModal focusFirstInput=true title="发起聊天"}}
+
+    <iframe src="http://maodou.us:3000/plugin/chat?id=123456&firstName={{login}}&lastName=&pictureUrl={{avatar_url}}" height=100% width=100%></iframe>
+
+    {{/ionModal}}
+  
 </template>

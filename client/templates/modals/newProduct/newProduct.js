@@ -6,3 +6,24 @@ AutoForm.hooks({
     }
   }
 });
+
+
+
+
+Template.newChat.helpers({
+  name: function () {
+    // http://momentjs.com/
+    if (Meteor.user())
+      return Meteor.user().profile.name;
+    else
+      return "http://www.gravatar.com/avatar/00000000000000000000000000000000?d=mm&f=y"
+  },
+
+  avatar_url: function () {
+    // http://momentjs.com/
+    if (Meteor.user())
+      return Meteor.user().profile.avatar_url;
+    else
+      return "Guest";
+  },
+});

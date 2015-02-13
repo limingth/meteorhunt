@@ -27,5 +27,5 @@ Router.route('/_oauth/:_id', function () {
 });
 
 Router.route('/chat', function () {
-  this.render('cbat');
+  this.render('chat');
 });
