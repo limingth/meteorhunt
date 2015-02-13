@@ -26,6 +26,6 @@ Router.route('/_oauth/:_id', function () {
   this.render('profile');
 });
 
-Router.route('/github', function () {
-  this.render('github');
+Router.route('/chat', function () {
+  this.render('cbat');
 });

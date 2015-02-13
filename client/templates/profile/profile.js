@@ -7,7 +7,7 @@ Template.profile.rendered = function () {
 };
 
 
-Template.github.rendered = function () {
-    Meteor.render('http://welog.us');
+Template.chat.rendered = function () {
+    //Meteor.render('http://welog.us');
 };
 

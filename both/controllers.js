@@ -66,7 +66,7 @@ ProfileController = AppController.extend({
   }
 });
 
-GithubController = AppController.extend({
+ChatController = AppController.extend({
     waitOn: function () {
     return Meteor.subscribe('products');
   },

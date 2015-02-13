@@ -1,5 +1,5 @@
 Template.appLayout.rendered = function () {
-  Session.set('currentTab', 'trending');
+  Session.set('currentTab', 'profile');
 };
 
 Template.appLayout.events({
