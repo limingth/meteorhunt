@@ -5,7 +5,8 @@ Template.productsShow.events({
       IonModal.open('newComment', {productId: template.data.product._id});
     } else {
     	console.log ('user NOT loggin, in productsShow');
-      IonModal.open('signIn');
+      // IonModal.open('signIn');
+      Router.go('/profile');
     }
   }
 });
